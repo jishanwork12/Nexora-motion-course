@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motion Without After Effects | ১ ঘন্টায় AI মোশন ভিডিও — Nexora</title>
+<meta name="description" content="After Effects, Premiere Pro ছাড়াই ১ ঘন্টায় শিখুন AI দিয়ে প্রফেশনাল মোশন গ্রাফিক্স ভিডিও বানানো।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1576091393645294');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1576091393645294&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root{
+  --ink:#16163A;
+  --ink-soft:#4A4A6A;
+  --paper:#F4F5FA;
+  --white:#FFFFFF;
+  --blue:#2E2BD6;
+  --blue-deep:#1C1A9E;
+  --sun:#FFC83D;
+  --line:#DCDEEA;
+  --ok:#14A06B;
+  --display:"Anek Bangla","Hind Siliguri",system-ui,sans-serif;
+  --body:"Hind Siliguri","Anek Bangla",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#ECECF8; --ink-soft:#A9AAC8; --paper:#0F0F26; --white:#18183A;
+    --line:#2C2C55; --blue:#6E6BFF; --blue-deep:#4B48E6;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#ECECF8; --ink-soft:#A9AAC8; --paper:#0F0F26; --white:#18183A;
+  --line:#2C2C55; --blue:#6E6BFF; --blue-deep:#4B48E6;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.2;margin:0}
+h2{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;margin-bottom:.6em}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+
+/* ---------- header ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:.02em;text-decoration:none}
+.logo span{display:inline-block;width:10px;height:10px;background:var(--sun);border-radius:2px;margin-left:4px;transform:rotate(45deg)}
+.top a.mini{font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:2px solid var(--sun)}
+
+/* ---------- hero ---------- */
+.hero{display:grid;gap:36px;padding:28px 0 56px;align-items:center}
+@media(min-width:880px){.hero{grid-template-columns:1.05fr .95fr;padding:56px 0 80px}}
+.course{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:18px}
+.course b{font-family:var(--display);font-weight:800;font-size:1.05rem;color:var(--blue)}
+.course span{font-size:.95rem;font-weight:600;background:var(--sun);color:#16163A;padding:2px 12px;border-radius:999px}
+.hero h1{font-size:clamp(2.1rem,7vw,3.6rem);font-weight:800;margin-bottom:.4em;letter-spacing:-.01em}
+.hero .lead{font-size:1.15rem;color:var(--ink-soft);max-width:34em}
+.deal{margin:22px 0 0;font-weight:600;font-size:1.05rem}
+.price{margin-top:4px!important;display:flex;align-items:baseline;gap:12px;margin:18px 0 6px;flex-wrap:wrap}
+.price b{font-family:var(--display);font-size:2.4rem;font-weight:800}
+.price s{color:var(--ink-soft);font-size:1.2rem}
+.price em{font-style:normal;background:var(--sun);color:#16163A;font-weight:600;font-size:.9rem;padding:2px 10px;border-radius:999px}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-family:var(--display);font-weight:700;font-size:1.15rem;padding:14px 28px;border-radius:14px;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--blue-deep);transform:translateY(-1px)}
+.countdown{margin-top:14px;font-size:.95rem;color:var(--ink-soft)}
+.countdown strong{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* the one bold moment: brief -> render -> mp4 */
+.studio{background:var(--blue);color:#fff;border-radius:22px;padding:22px;box-shadow:0 30px 60px -30px rgba(46,43,214,.55);position:relative;overflow:hidden}
+.studio::after{content:"";position:absolute;inset:auto -40px -60px auto;width:200px;height:200px;border-radius:50%;background:var(--sun);opacity:.18}
+.bubble{background:rgba(255,255,255,.14);border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:.98rem;min-height:3.4em}
+.bubble .cur{display:inline-block;width:2px;height:1em;background:var(--sun);vertical-align:-2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.render{margin-top:14px;font-size:.88rem;opacity:.9}
+.bar{height:8px;background:rgba(255,255,255,.2);border-radius:99px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--sun);border-radius:99px}
+.frame{margin-top:16px;aspect-ratio:16/9;border-radius:12px;background:#0E0D52;position:relative;overflow:hidden;display:grid;place-items:center}
+.frame .t{font-family:var(--display);font-weight:800;font-size:clamp(1.1rem,4vw,1.6rem);opacity:0;transform:translateY(14px)}
+.frame .chip{position:absolute;left:12px;bottom:10px;font-size:.8rem;background:var(--ok);padding:2px 10px;border-radius:99px;opacity:0}
+.frame .dot{position:absolute;width:46px;height:46px;border-radius:12px;background:var(--sun);opacity:0}
+.go .frame .t{animation:rise .7s .1s cubic-bezier(.2,.8,.2,1) forwards}
+.go .frame .chip{animation:fade .4s 1s forwards}
+.go .frame .dot{animation:spin 1.6s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+@keyframes spin{0%{opacity:0;transform:translate(-120px,-40px) rotate(0)}40%{opacity:.9}100%{opacity:.9;transform:translate(110px,-38px) rotate(180deg) scale(.6)}}
+
+/* ---------- sections ---------- */
+section{padding:56px 0;border-top:1px solid var(--line)}
+.sub{color:var(--ink-soft);max-width:38em}
+
+.demo-box{margin:0;border-radius:16px;overflow:hidden;background:var(--white);border:1px solid var(--line)}
+.demo-box video{width:100%;aspect-ratio:16/9;background:#0E0D52;object-fit:cover}
+.demo-box figcaption{padding:10px 14px;font-weight:600;font-size:.95rem}
+.demo-row{display:grid;gap:18px}
+@media(min-width:760px){.demo-row{grid-template-columns:1fr 1fr}.demo-box.feature{grid-column:1/-1}}
+
+/* timeline: the course really is a sequence of minutes */
+.timeline{position:relative;margin-top:28px}
+.track{display:grid;gap:0}
+.clip{display:grid;grid-template-columns:76px 1fr;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.clip:last-child{border-bottom:0}
+.clip .tc{font-family:var(--display);font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums;padding-top:2px}
+.clip h3{font-size:1.2rem;font-weight:700;margin-bottom:2px}
+.clip p{margin:0;color:var(--ink-soft)}
+.ruler{height:14px;border-radius:7px;background:var(--white);border:1px solid var(--line);display:flex;overflow:hidden}
+.ruler span{height:100%;border-right:2px solid var(--paper)}
+.ruler span:nth-child(odd){background:var(--blue)}
+.ruler span:nth-child(even){background:var(--sun)}
+.ruler-legend{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ink-soft);margin-top:4px}
+
+.two{display:grid;gap:28px}
+@media(min-width:820px){.two{grid-template-columns:1fr 1fr}}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid var(--line)}
+.list li::before{content:"";position:absolute;left:4px;top:19px;width:12px;height:12px;border-radius:3px;background:var(--blue);transform:rotate(45deg)}
+.list.sun li::before{background:var(--sun)}
+.note{background:var(--white);border-left:4px solid var(--sun);padding:16px 18px;border-radius:0 12px 12px 0;margin-top:20px;font-size:1rem}
+
+/* ---------- enroll ---------- */
+.enroll{background:var(--ink);color:var(--paper);border-radius:26px;padding:34px 22px;margin:56px 0}
+:root:not([data-theme="light"]) .enroll{}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .enroll{background:#22225A;color:#ECECF8}}
+:root[data-theme="dark"] .enroll{background:#22225A;color:#ECECF8}
+@media(min-width:820px){.enroll{padding:48px}}
+.enroll h2{color:inherit}
+.enroll .sub{color:inherit;opacity:.75}
+.steps{list-style:none;padding:0;margin:22px 0;display:grid;gap:14px;counter-reset:s}
+@media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;background:rgba(255,255,255,.07);border-radius:14px;padding:16px 16px 16px 58px;position:relative}
+.steps li::before{content:counter(s,bengali);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--sun);color:#16163A;font-family:var(--display);font-weight:800;display:grid;place-items:center}
+.pay{display:grid;gap:12px;margin:8px 0 26px}
+@media(min-width:820px){.pay{grid-template-columns:1fr 1fr}}
+.bkash{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#E2136E;color:#fff;border-radius:16px;padding:16px 18px}
+.bkash.nagad{background:#EC5B1D}
+.nagad .copy{color:#EC5B1D}
+.bkash .num{font-family:var(--display);font-weight:800;font-size:1.5rem;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.bkash small{display:block;opacity:.9;font-size:.85rem}
+.copy{margin-left:auto;background:#fff;color:#E2136E;border:0;border-radius:10px;padding:8px 14px;font-weight:600;font-family:var(--body);cursor:pointer}
+form{display:grid;gap:14px}
+@media(min-width:820px){form{grid-template-columns:1fr 1fr}form .full{grid-column:1/-1}}
+label{font-weight:600;font-size:.95rem;display:block;margin-bottom:4px}
+input,select{width:100%;padding:13px 14px;border-radius:12px;border:2px solid transparent;background:#fff;color:#16163A;font:inherit;font-size:1rem}
+input:focus,select:focus{outline:none;border-color:var(--sun)}
+.err{color:var(--sun);font-size:.9rem;min-height:1.2em;margin:0}
+.btn.wa{background:var(--sun);color:#16163A;width:100%}
+.btn.wa:hover{background:#FFD76A}
+
+/* ---------- faq ---------- */
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.08rem;padding:12px 28px 12px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:8px;font-size:1.4rem;color:var(--blue);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--ink-soft);margin:0 0 14px}
+
+footer{padding:30px 0 50px;color:var(--ink-soft);font-size:.92rem;text-align:center}
+
+/* sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--white);border-top:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .3s;z-index:20}
+.sticky.show{transform:none}
+.sticky b{font-family:var(--display);font-size:1.3rem}
+.sticky .btn{padding:10px 20px;font-size:1rem}
+@media(min-width:880px){.sticky{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .frame .t,.frame .chip{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Nexora<span></span></a>
+    <a class="mini" href="#enroll">এনরোল করুন</a>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="course"><b>Motion Without After Effects</b><span>১ ঘন্টায় AI মোশন ভিডিও</span></div>
+      <h1>After Effects, Premiere Pro ছাড়াই<br>AI দিয়ে মোশন ভিডিও।</h1>
+      <p class="lead">কোনো এডিটিং সফটওয়্যার লাগবে না। শুধু লিখে বলবেন কেমন ভিডিও চান, AI নিজেই প্রফেশনাল মোশন গ্রাফিক্স বানিয়ে MP4 রেন্ডার করে দেবে। ১ ঘন্টায় পুরো সিস্টেম শিখে নিন।</p>
+      <p class="deal">৳<span class="js-regular">১৯৯৯</span> টাকার কোর্স, এখন মাত্র ৳<span class="js-price">৬৯৯</span> টাকায়</p>
+      <div class="price">
+        <b>৳<span class="js-price">৬৯৯</span></b>
+        <s>৳<span class="js-regular">১৯৯৯</span></s>
+        <em>লঞ্চ অফার</em>
+      </div>
+      <a class="btn" href="#enroll">এখনই এনরোল করুন</a>
+      <p class="countdown" id="countdown" hidden>অফার শেষ হবে <strong id="cd"></strong> পর</p>
+    </div>
+
+    <div class="studio" id="studio" aria-label="উদাহরণ: একটা ব্রিফ থেকে ভিডিও রেন্ডার">
+      <div class="bubble"><span id="typed"></span><span class="cur"></span></div>
+      <div class="render"><span id="rstatus">অপেক্ষা করছে…</span><div class="bar"><i id="rbar"></i></div></div>
+      <div class="frame">
+        <div class="dot"></div>
+        <div class="t">Launch faster.</div>
+        <div class="chip">promo_v1.mp4 ✓</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO -->
+<section>
+  <div class="wrap">
+    <h2>এই সিস্টেমে বানানো ভিডিও</h2>
+    <p class="sub">নিচের কোনো ভিডিও After Effects বা Premiere Pro-তে বানানো হয়নি। পুরোটা AI দিয়ে কোড লিখিয়ে রেন্ডার করা।</p>
+    <div class="demo-row">
+      <figure class="demo-box feature">
+        <video src="videos/demo1.mp4#t=0.5" controls playsinline preload="metadata"></video>
+        <figcaption class="js-cap"></figcaption>
+      </figure>
+      <figure class="demo-box">
+        <video src="videos/demo2.mp4#t=0.5" controls playsinline preload="metadata"></video>
+        <figcaption class="js-cap"></figcaption>
+      </figure>
+      <figure class="demo-box">
+        <video src="videos/demo3.mp4#t=0.5" controls playsinline preload="metadata"></video>
+        <figcaption class="js-cap"></figcaption>
+      </figure>
+      <figure class="demo-box">
+        <video src="videos/demo4.mp4#t=0.5" controls playsinline preload="metadata"></video>
+        <figcaption class="js-cap"></figcaption>
+      </figure>
+      <figure class="demo-box">
+        <video src="videos/demo5.mp4#t=0.5" controls playsinline preload="metadata"></video>
+        <figcaption class="js-cap"></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section>
+  <div class="wrap">
+    <h2>৬০ মিনিটে যা শিখবেন</h2>
+    <p class="sub">একটা লাইভ প্রজেক্ট ধরে শুরু থেকে শেষ পর্যন্ত। ক্লাস শেষে আপনার নিজের প্রথম ভিডিও রেডি থাকবে।</p>
+    <div class="timeline">
+      <div class="ruler" aria-hidden="true">
+        <span style="width:8.3%"></span><span style="width:16.7%"></span><span style="width:25%"></span><span style="width:16.7%"></span><span style="width:16.7%"></span><span style="width:16.6%"></span>
+      </div>
+      <div class="ruler-legend" aria-hidden="true"><span>০:০০</span><span>৩০:০০</span><span>৬০:০০</span></div>
+      <div class="track">
+        <div class="clip"><div class="tc">০০:০০</div><div><h3>এটা কিভাবে কাজ করে</h3><p>ডেমো দেখে বুঝবেন AI কিভাবে কোড লিখে ভিডিও বানায়।</p></div></div>
+        <div class="clip"><div class="tc">০৫:০০</div><div><h3>সেটআপ</h3><p>AI প্রজেক্ট সেটআপ, রেডি সিস্টেম প্রম্পট বসানো, ফোল্ডার সাজানো।</p></div></div>
+        <div class="clip"><div class="tc">১৫:০০</div><div><h3>প্রথম ভিডিও, লাইভ</h3><p>ব্রিফ লেখা, সিন প্ল্যান অনুমোদন, তারপর MP4 রেন্ডার।</p></div></div>
+        <div class="clip"><div class="tc">৩০:০০</div><div><h3>এডিট আর ভার্সন</h3><p>শুধু একটা অংশ বদলানো, v2, v3 রেন্ডার, আর ভুল হলে কী করবেন।</p></div></div>
+        <div class="clip"><div class="tc">৪০:০০</div><div><h3>ব্র্যান্ড আর মিউজিক</h3><p>লোগো, কালার, মিউজিকের বিটে কাট, Reels আর YouTube সাইজ।</p></div></div>
+        <div class="clip"><div class="tc">৫০:০০</div><div><h3>এই স্কিল দিয়ে আয়</h3><p>ক্লায়েন্টের কাছে কত টাকায় বিক্রি করবেন আর ক্লায়েন্ট কোথায় পাবেন।</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO + BONUS -->
+<section>
+  <div class="wrap two">
+    <div>
+      <h2>কাদের জন্য</h2>
+      <ul class="list">
+        <li>ফ্রিল্যান্সার যারা নতুন সার্ভিস যোগ করতে চান</li>
+        <li>ভিডিও এডিটর যারা After Effects শিখতে সময় পাচ্ছেন না</li>
+        <li>বিজনেস ওনার যারা নিজের প্রোডাক্টের প্রোমো নিজেই বানাতে চান</li>
+        <li>ডিজিটাল মার্কেটার যারা অ্যাডের জন্য দ্রুত ভিডিও চান</li>
+      </ul>
+    </div>
+    <div>
+      <h2>সাথে যা পাবেন</h2>
+      <ul class="list sun">
+        <li>রেডি সিস্টেম প্রম্পট, কপি করে বসালেই কাজ শুরু</li>
+        <li>১০টা রেডি ব্রিফ টেমপ্লেট (প্রোমো, প্রোডাক্ট লঞ্চ, Reels অ্যাড)</li>
+        <li>কালার প্যালেট লিস্ট</li>
+        <li>১ মাস WhatsApp গ্রুপে সাপোর্ট</li>
+        <li>ক্লাসের রেকর্ডিং, যখন খুশি দেখবেন</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="note"><strong>শুরুর আগে জেনে রাখুন:</strong> ফ্রিতেই কাজ করতে পারবেন। তবে ফ্রি প্ল্যানে ৩–৪টা ভিডিও বানানোর পর টাইম লিমিট আসে, কিছু সময় অপেক্ষা করে আবার বানাতে পারবেন। একটা ল্যাপটপ বা পিসি থাকলে সবচেয়ে ভালো।</p>
+  </div>
+</section>
+
+<!-- ENROLL -->
+<div class="wrap">
+  <div class="enroll" id="enroll">
+    <h2>কিভাবে এনরোল করবেন</h2>
+    <p class="sub">পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘন্টার মধ্যে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p>
+    <ol class="steps">
+      <li>নিচের bKash বা Nagad নম্বরে ৳<span class="js-price">৬৯৯</span> Send Money করে স্ক্রিনশট নিন</li>
+      <li>ফর্মে আপনার নাম আর নম্বর লিখুন</li>
+      <li>WhatsApp খুললে মেসেজের সাথে স্ক্রিনশটটা পাঠান</li>
+    </ol>
+
+    <div class="pay">
+      <div class="bkash"><div><small>bKash · Send Money</small><span class="num js-bnum"></span></div><button class="copy" type="button" data-copy="bkash">কপি</button></div>
+      <div class="bkash nagad"><div><small>Nagad · Send Money</small><span class="num js-nnum"></span></div><button class="copy" type="button" data-copy="nagad">কপি</button></div>
+    </div>
+
+    <form id="enrollForm" novalidate>
+      <div><label for="f-name">আপনার নাম</label><input id="f-name" autocomplete="name" required></div>
+      <div><label for="f-phone">WhatsApp নম্বর</label><input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" required></div>
+      <div><label for="f-from">যে নম্বর থেকে টাকা পাঠিয়েছেন</label><input id="f-from" type="tel" inputmode="tel" placeholder="01XXXXXXXXX" required></div>
+      <div><label for="f-method">পেমেন্ট মাধ্যম</label>
+        <select id="f-method"><option>bKash</option><option>Nagad</option></select></div>
+      <p class="err full" id="err" role="alert"></p>
+      <div class="full"><button class="btn wa" type="submit">WhatsApp-এ কনফার্ম করুন</button>
+        <p id="sent" hidden style="margin:12px 0 0;opacity:.85">WhatsApp-এ মেসেজটা সেন্ড করে পেমেন্টের স্ক্রিনশটটা পাঠাতে ভুলবেন না।</p></div>
+    </form>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <h2>প্রশ্ন ও উত্তর</h2>
+    <details><summary>কোডিং না জানলে কি পারবো?</summary><p>হ্যাঁ। কোড AI নিজেই লেখে। আপনি শুধু বাংলায় বা ইংরেজিতে কী ভিডিও চান সেটা বলবেন।</p></details>
+    <details><summary>ক্লাস লাইভ নাকি রেকর্ডেড?</summary><p>রেকর্ডেড ভিডিও। এনরোল করার পর যখন খুশি দেখতে পারবেন। প্রশ্ন থাকলে WhatsApp গ্রুপে জিজ্ঞেস করবেন।</p></details>
+    <details><summary>ফ্রিতে কি ভিডিও বানানো যাবে?</summary><p>হ্যাঁ। ফ্রি প্ল্যানেই ভিডিও বানানো যায়। ৩–৪টা ভিডিও বানানোর পর টাইম লিমিট আসে, কিছু সময় পর আবার শুরু করতে পারবেন। প্রতিদিন অনেক ভিডিও বানাতে চাইলে পেইড প্ল্যান নিতে পারেন।</p></details>
+    <details><summary>মোবাইল দিয়ে কি করা যাবে?</summary><p>শেখা যাবে, তবে কাজের জন্য ল্যাপটপ বা পিসি সাজেস্ট করি। ফাইল সামলানো আর ভিডিও চেক করা সেখানে সহজ।</p></details>
+    <details><summary>পেমেন্টের পর কতক্ষণে অ্যাক্সেস পাবো?</summary><p>পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘন্টার মধ্যে WhatsApp গ্রুপে যোগ করা হয়, সেখানেই ক্লাসের লিংক থাকবে।</p></details>
+  </div>
+</section>
+
+<footer>Motion Without After Effects · © Nexora · সব প্রশ্নের জন্য <a href="#" id="waLink">WhatsApp করুন</a></footer>
+
+<div class="sticky" id="sticky">
+  <div><b>৳<span class="js-price">৬৯৯</span></b> <s style="color:var(--ink-soft)">৳<span class="js-regular">১৯৯৯</span></s></div>
+  <a class="btn" href="#enroll">এনরোল করুন</a>
+</div>
+
+<script>
+/* ============ এখানে নিজের তথ্য বসাবেন ============ */
+const CONFIG = {
+  price: 699,
+  regularPrice: 1999,
+  bkashNumber: "01742312608",
+  nagadNumber: "01742312608",
+  whatsappNumber: "8801742312608", // WhatsApp নম্বর, 880 দিয়ে শুরু, + ছাড়া
+  offerEnds: "2026-10-20T23:59:00+06:00", // অফার শেষের সময় (খালি রাখলে countdown দেখাবে না)
+  courseName: "Motion Without After Effects",
+  // ডেমো ভিডিওর নিচের লেখা (videos ফোল্ডারে demo1.mp4 ... demo5.mp4 এর ক্রমে)
+  videoCaptions: ["প্রোডাক্ট লঞ্চ প্রোমো", "AI চ্যাটবট প্রোমো", "রিয়েল এস্টেট প্রোমো", "প্রিমিয়াম ব্র্যান্ড প্রোমো", "প্রোডাক্ট ওয়াকথ্রু"]
+};
+/* =============================================== */
+
+document.querySelectorAll(".js-cap").forEach((e,i) => e.textContent = CONFIG.videoCaptions[i] || "");
+const bn = n => String(n).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+document.querySelectorAll(".js-price").forEach(e => e.textContent = bn(CONFIG.price));
+document.querySelectorAll(".js-regular").forEach(e => e.textContent = bn(CONFIG.regularPrice));
+const fmt = n => n.replace(/^(\d{5})(\d{6})$/, "$1-$2");
+document.querySelectorAll(".js-bnum").forEach(e => e.textContent = fmt(CONFIG.bkashNumber));
+document.querySelectorAll(".js-nnum").forEach(e => e.textContent = fmt(CONFIG.nagadNumber));
+document.getElementById("waLink").href = "https://wa.me/" + CONFIG.whatsappNumber;
+
+// copy number
+document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", async () => {
+  const num = b.dataset.copy === "nagad" ? CONFIG.nagadNumber : CONFIG.bkashNumber;
+  try { await navigator.clipboard.writeText(num); b.textContent = "কপি হয়েছে ✓"; }
+  catch { b.textContent = num; }
+  setTimeout(() => b.textContent = "কপি", 2000);
+}));
+
+// countdown
+(function(){
+  if (!CONFIG.offerEnds) return;
+  const end = new Date(CONFIG.offerEnds).getTime();
+  const box = document.getElementById("countdown"), out = document.getElementById("cd");
+  function tick(){
+    const s = Math.floor((end - Date.now())/1000);
+    if (s <= 0) { box.hidden = true; return; }
+    const d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60);
+    out.textContent = bn(d) + " দিন " + bn(h) + " ঘন্টা " + bn(m) + " মিনিট";
+    box.hidden = false;
+  }
+  tick(); setInterval(tick, 30000);
+})();
+
+// form -> WhatsApp message
+const bdPhone = v => /^(\+?88)?01[3-9]\d{8}$/.test(v.replace(/[\s-]/g,""));
+document.getElementById("enrollForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const err = document.getElementById("err");
+  if (!v("f-name")) return err.textContent = "নাম লিখুন।";
+  if (!bdPhone(v("f-phone"))) return err.textContent = "সঠিক WhatsApp নম্বর লিখুন (01 দিয়ে শুরু, ১১ ডিজিট)।";
+  if (!bdPhone(v("f-from"))) return err.textContent = "যে নম্বর থেকে টাকা পাঠিয়েছেন সেটা সঠিকভাবে লিখুন।";
+  err.textContent = "";
+  const msg = `আসসালামু আলাইকুম, আমি ${CONFIG.courseName}-এ এনরোল করতে চাই।\n\nনাম: ${v("f-name")}\nWhatsApp: ${v("f-phone")}\nপেমেন্ট: ${v("f-method")} ৳${CONFIG.price}\nযে নম্বর থেকে: ${v("f-from")}\n\nপেমেন্টের স্ক্রিনশট পাঠাচ্ছি।`;
+  try{ fbq("track","Lead",{value:CONFIG.price,currency:"BDT",content_name:CONFIG.courseName}); }catch(_){}
+  document.getElementById("sent").hidden = false;
+  window.open("https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(msg), "_blank");
+});
+
+// Pixel: enroll button clicks
+document.querySelectorAll('a[href="#enroll"]').forEach(a => a.addEventListener("click", () => {
+  try{ fbq("track","InitiateCheckout",{value:CONFIG.price,currency:"BDT"}); }catch(_){}
+}));
+
+// sticky CTA after hero
+const sticky = document.getElementById("sticky"), enroll = document.getElementById("enroll");
+addEventListener("scroll", () => {
+  const r = enroll.getBoundingClientRect();
+  const inEnroll = r.top < innerHeight && r.bottom > 0;
+  sticky.classList.toggle("show", scrollY > 500 && !inEnroll);
+}, {passive:true});
+
+// hero: brief -> render -> mp4 (one-time, respects reduced motion)
+(function(){
+  const text = "১৫ সেকেন্ডের SaaS প্রোমো বানাও, 9:16, নীল ব্র্যান্ড কালার।";
+  const typed = document.getElementById("typed"), bar = document.getElementById("rbar"),
+        st = document.getElementById("rstatus"), studio = document.getElementById("studio");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) { typed.textContent = text; bar.style.width = "100%"; st.textContent = "রেন্ডার শেষ"; studio.classList.add("go"); return; }
+  let i = 0;
+  const t = setInterval(() => {
+    typed.textContent = text.slice(0, ++i);
+    if (i >= text.length) { clearInterval(t); render(); }
+  }, 45);
+  function render(){
+    st.textContent = "রেন্ডার হচ্ছে…";
+    let p = 0;
+    const r = setInterval(() => {
+      p = Math.min(100, p + 4); bar.style.width = p + "%";
+      if (p === 100) { clearInterval(r); st.textContent = "রেন্ডার শেষ"; studio.classList.add("go"); }
+    }, 50);
+  }
+})();
+</script>
+</body>
+</html>
