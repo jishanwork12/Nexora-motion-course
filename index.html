@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Motion Without After Effects · Nexora</title>
-<meta name="description" content="After Effects বা Premiere Pro ছাড়াই AI দিয়ে প্রফেশনাল মোশন ভিডিও বানানো শিখুন। ১ ঘণ্টা+ লাইভ কোর্স, লঞ্চ অফারে মাত্র ৬৯৯ টাকা।">
+<meta name="description" content="After Effects বা Premiere Pro ছাড়াই AI দিয়ে প্রফেশনাল মোশন ভিডিও বানানো শিখুন। ১ ঘণ্টা+ রেকর্ডেড কোর্স, লঞ্চ অফারে মাত্র ৬৯৯ টাকা।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -117,6 +117,36 @@ header{position:sticky;top:0;z-index:20;background:rgba(244,245,251,.92);backdro
 .screen[data-s="2"] .s2 .big{opacity:1;transform:none}
 .mock .file{position:absolute;left:12px;bottom:12px;background:var(--green);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px;opacity:0;transform:translateY(10px) scale(.8);transition:all .4s cubic-bezier(.2,1.4,.4,1);z-index:3}
 .screen[data-s="done"] .file{opacity:1;transform:none}
+/* wall of videos */
+.sc.s3{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:6px;padding:8px 8px 26px;place-items:stretch}
+.s3 .tile{border-radius:7px;overflow:hidden;background:#000;transform:scale(.5);opacity:0;transition:transform .5s cubic-bezier(.2,1.4,.4,1),opacity .3s}
+.s3 .tile video{width:100%;height:100%;object-fit:cover;display:block}
+.screen[data-s="wall"] .s3{opacity:1}
+.screen[data-s="wall"] .s3 .tile{transform:none;opacity:1}
+.screen[data-s="wall"] .s3 .tile:nth-child(2){transition-delay:.12s}.screen[data-s="wall"] .s3 .tile:nth-child(3){transition-delay:.24s}.screen[data-s="wall"] .s3 .tile:nth-child(4){transition-delay:.36s}.screen[data-s="wall"] .s3 .tile:nth-child(5){transition-delay:.48s}.screen[data-s="wall"] .s3 .tile:nth-child(6){transition-delay:.6s}
+.s3 .cap{position:absolute;left:0;right:0;bottom:5px;text-align:center;font-size:11px;font-weight:600;color:#fff;opacity:0;transition:opacity .4s 1s}
+.screen[data-s="wall"] .s3 .cap{opacity:1}
+/* reel */
+.reel{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;border-radius:12px}
+.reel h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.reel p{color:var(--muted);font-size:15px}
+/* calculator */
+.calc{margin-top:26px;background:var(--navy);color:#fff;border-radius:20px;padding:26px}
+.seg2{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:rgba(255,255,255,.08);padding:5px;border-radius:12px}
+.seg2 button{border:0;border-radius:9px;padding:11px 8px;font:600 15px "Hind Siliguri",sans-serif;background:transparent;color:#c9caef;cursor:pointer}
+.seg2 button[aria-pressed="true"]{background:var(--yellow);color:var(--navy)}
+.crow{margin-top:20px}
+.crow .top{display:flex;justify-content:space-between;font-size:14px;color:#c9caef;margin-bottom:6px}
+.crow .top b{color:#fff;font-size:18px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:9px;background:rgba(255,255,255,.2);padding:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--yellow);border:3px solid var(--navy);box-shadow:0 0 0 2px var(--yellow)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--yellow);border:3px solid var(--navy)}
+.res{margin-top:24px;text-align:center;background:rgba(255,255,255,.07);border-radius:14px;padding:18px}
+.res small{color:#c9caef;display:block}
+.res .amt{font:800 clamp(36px,7vw,52px)/1.1 "Anek Bangla",sans-serif;color:var(--yellow);font-variant-numeric:tabular-nums}
+.disc{font-size:13px;color:#aeb0dc;margin-top:12px;text-align:center}
+@media(max-width:760px){.reel{grid-template-columns:1fr;justify-items:center;text-align:center}.reel video{max-width:260px}}
 /* timeline strip */
 .tl{margin-top:10px;background:rgba(0,0,0,.22);border-radius:10px;padding:8px 10px;position:relative;display:grid;gap:5px;overflow:hidden}
 .tl i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.35)}
@@ -232,7 +262,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
   <div>
     <div class="tag">Motion Without After Effects <span class="pill">১ ঘণ্টা+ AI মোশন ভিডিও</span></div>
     <h1>After Effects, Premiere Pro ছাড়াই AI দিয়ে মোশন ভিডিও।</h1>
-    <p class="sub">কোনো এডিটিং সফটওয়্যার লাগবে না। শুধু লিখে বলবেন কেমন ভিডিও চান, AI নিজেই প্রফেশনাল মোশন গ্রাফিক্স বানিয়ে MP4 রেন্ডার করে দেবে। ১ ঘণ্টার বেশি সময়ের লাইভ ক্লাসে পুরো সিস্টেম শিখে নিন।</p>
+    <p class="sub">কোনো এডিটিং সফটওয়্যার লাগবে না। শুধু লিখে বলবেন কেমন ভিডিও চান, AI নিজেই প্রফেশনাল মোশন গ্রাফিক্স বানিয়ে MP4 রেন্ডার করে দেবে। ১ ঘণ্টার বেশি সময়ের রেকর্ডেড কোর্সে পুরো সিস্টেম শিখে নিন, নিজের সময়মতো।</p>
 
     <div class="price">
       <div class="was js-price-label">কোর্সের রেগুলার প্রাইস <b>৳১৯৯৯</b>, এখন লঞ্চ অফারে</div>
@@ -266,6 +296,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
       <div class="sc s0"><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
       <div class="sc s1"><h4><span>Launch</span><span>faster.</span></h4><span class="sq"></span><span class="ring"></span></div>
       <div class="sc s2"><span class="big">+২৪০%</span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+      <div class="sc s3"><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/nexora-intro.jpg" data-src="videos/mini/nexora-intro.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-realestate.jpg" data-src="videos/mini/bigibyte-realestate.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-aichat.jpg" data-src="videos/mini/bigibyte-aichat.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/visyon-promo.jpg" data-src="videos/mini/visyon-promo.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-launch.jpg" data-src="videos/mini/bigibyte-launch.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-premium.jpg" data-src="videos/mini/bigibyte-premium.mp4"></video></div><span class="cap">এই সবগুলো ভিডিও এই সিস্টেমেই বানানো</span></div>
       <span class="file">promo_v1.mp4 ✓</span>
     </div>
     <div class="tl"><i></i><i></i><i></i></div>
@@ -275,7 +306,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
 <!-- VIDEOS -->
 <section id="demo"><div class="wrap">
   <h2>কোর্স শেষে আপনিও এমন ভিডিও বানাতে পারবেন</h2>
-  <p class="lead">নিচের প্রতিটা ভিডিও After Effects বা Premiere Pro-তে বানানো হয়নি। পুরোটা AI দিয়ে কোড লিখিয়ে রেন্ডার করা। ১ ঘণ্টার ক্লাসে এই একই সিস্টেম আপনি নিজের হাতে চালাতে শিখবেন।</p>
+  <p class="lead">নিচের প্রতিটা ভিডিও After Effects বা Premiere Pro-তে বানানো হয়নি। পুরোটা AI দিয়ে কোড লিখিয়ে রেন্ডার করা। ১ ঘণ্টার কোর্সে এই একই সিস্টেম আপনি নিজের হাতে চালাতে শিখবেন।</p>
 
   <figure class="vid feat">
     <video controls playsinline preload="none" poster="videos/nexora-launch.jpg"><source src="videos/nexora-launch.mp4" type="video/mp4"></video>
@@ -293,22 +324,44 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
     <figure class="vid"><video controls playsinline preload="none" poster="videos/bigibyte-premium.jpg"><source src="videos/bigibyte-premium.mp4" type="video/mp4"></video><p>প্রিমিয়াম ব্র্যান্ড প্রোমো <small>০:১৪</small></p></figure>
   </div>
 
+  <div class="reel">
+    <video controls playsinline preload="none" poster="videos/reel-intro.jpg"><source src="videos/reel-intro.mp4" type="video/mp4"></video>
+    <div><h3>মোবাইলের জন্য ভার্টিক্যাল Reels</h3><p>৯:১৬ সাইজের ভিডিও, যেটা Facebook Reels, Instagram আর YouTube Shorts-এ সরাসরি পোস্ট করা যায়। কোর্সে Reels সাইজও শিখবেন।</p></div>
+  </div>
+
   <div class="cta-row"><a class="btn yellow" href="#enroll">আমিও এমন ভিডিও বানাতে চাই</a>
     <div class="cta-note js-cta-note">লঞ্চ অফারে মাত্র ৳৬৯৯</div></div>
 </div></section>
 
 <!-- LEARN -->
 <section><div class="wrap">
-  <h2>১ ঘণ্টা+ ক্লাসে যা শিখবেন</h2>
-  <p class="lead">একটা লাইভ প্রজেক্ট ধরে শুরু থেকে শেষ পর্যন্ত। ক্লাস শেষে আপনার নিজের প্রথম রেডি ভিডিও থাকবে।</p>
+  <h2>১ ঘণ্টা+ কোর্সে যা শিখবেন</h2>
+  <p class="lead">একটা প্রজেক্ট ধরে শুরু থেকে শেষ পর্যন্ত। কোর্স শেষে আপনার নিজের প্রথম রেডি ভিডিও থাকবে।</p>
   <div class="seg"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="ticks"><span>০:০০</span><span>৩০:০০</span><span>৬০:০০+</span></div>
   <div class="step"><time>০০:০০</time><div><h3>এটা কিভাবে কাজ করে</h3><p>ডেমো দেখে বুঝবেন AI কিভাবে কোড লিখে ভিডিও বানায়।</p></div></div>
   <div class="step"><time>০৫:০০</time><div><h3>সেটআপ</h3><p>AI প্রজেক্ট সেটআপ, রেডি সিস্টেম প্রম্পট বসানো, ফোল্ডার সাজানো।</p></div></div>
-  <div class="step"><time>১০:০০</time><div><h3>প্রথম ভিডিও, লাইভ</h3><p>ব্রিফ লেখা, সিন প্ল্যান অনুমোদন, তারপর MP4 রেন্ডার।</p></div></div>
+  <div class="step"><time>১০:০০</time><div><h3>প্রথম ভিডিও, হাতে-কলমে</h3><p>ব্রিফ লেখা, সিন প্ল্যান অনুমোদন, তারপর MP4 রেন্ডার।</p></div></div>
   <div class="step"><time>৩০:০০</time><div><h3>এডিট আর ভার্সন</h3><p>শুধু একটা অংশ বদলানো, v2, v3 রেন্ডার, আর ভুল হলে কী করবেন।</p></div></div>
   <div class="step"><time>৪০:০০</time><div><h3>ব্র্যান্ড আর মিউজিক</h3><p>লোগো, কালার, মিউজিকের বিটে কাট, Reels আর YouTube সাইজ।</p></div></div>
   <div class="step"><time>৫০:০০</time><div><h3>এই স্কিল দিয়ে আয়</h3><p>ক্লায়েন্টের কাছে কত টাকায় বিক্রি করবেন আর ক্লায়েন্ট কোথায় পাবেন।</p></div></div>
+</div></section>
+
+<!-- CALC -->
+<section id="income"><div class="wrap">
+  <h2>এই স্কিল দিয়ে কত আয় হতে পারে</h2>
+  <p class="lead">নিজের ক্লায়েন্টের ধরন আর মাসে কয়টা ভিডিও করবেন, সেটা বেছে নিন। আপনার দাম অনুযায়ী মাসের হিসাব দেখুন।</p>
+  <div class="calc">
+    <div class="seg2" role="group" aria-label="ক্লায়েন্টের ধরন">
+      <button type="button" data-t="local" aria-pressed="true">লোকাল ক্লায়েন্ট</button>
+      <button type="button" data-t="intl" aria-pressed="false">ইন্টারন্যাশনাল ক্লায়েন্ট</button>
+    </div>
+    <div class="crow"><div class="top"><span>প্রতি ভিডিওর দাম</span><b id="c-price">৳২,৫০০</b></div><input id="r-price" type="range" aria-label="প্রতি ভিডিওর দাম"></div>
+    <div class="crow"><div class="top"><span>মাসে ভিডিওর সংখ্যা</span><b id="c-count">৫টা</b></div><input id="r-count" type="range" min="1" max="20" value="5" aria-label="মাসে ভিডিওর সংখ্যা"></div>
+    <div class="res"><small>মাসে আনুমানিক আয়</small><div class="amt" id="c-total">৳১২,৫০০</div><small id="c-note"></small></div>
+    <p class="disc">এটা শুধু একটা উদাহরণ হিসাব, আয়ের নিশ্চয়তা নয়। ক্লায়েন্ট পাওয়া আর দাম ঠিক করা আপনার কাজ আর দক্ষতার ওপর নির্ভর করবে।</p>
+  </div>
+  <div class="cta-row"><a class="btn yellow" href="#enroll">স্কিলটা শিখে নিন</a></div>
 </div></section>
 
 <!-- INSTRUCTOR -->
@@ -322,12 +375,12 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
   <div class="ins">
     <h2>আপনার ইন্সট্রাক্টর</h2>
     <div class="role">ইকরামুল ইসলাম জিসান, ফাউন্ডার, Nexora</div>
-    <p>আমি এই ক্লাসে যা শেখাব, ঠিক সেটাই প্রতিদিন ক্লায়েন্টের কাজে ব্যবহার করি। উপরের ভিডিওগুলোও এই সিস্টেমেই বানানো।</p>
+    <p>আমি এই কোর্সে যা শেখাব, ঠিক সেটাই প্রতিদিন ক্লায়েন্টের কাজে ব্যবহার করি। উপরের ভিডিওগুলোও এই সিস্টেমেই বানানো।</p>
     <ul class="facts">
       <li>Nexora-র ফাউন্ডার: AI ভিডিও, ভিডিও এডিটিং, গ্রাফিক ডিজাইন আর ডিজিটাল মার্কেটিং</li>
       <li>বাংলাদেশ ও সৌদি আরবের ক্লায়েন্টের জন্য নিয়মিত কাজ করি</li>
       <li>Google Ads, Meta Ads আর Google Business Profile ম্যানেজ করার অভিজ্ঞতা</li>
-      <li>ক্লাসে থিওরি নয়, লাইভ প্রজেক্ট বানিয়ে দেখাই</li>
+      <li>কোর্সে থিওরি নয়, পুরো প্রজেক্ট বানিয়ে দেখাই</li>
     </ul>
     <a class="btn" href="#enroll">আমার সাথে শিখুন</a>
     <p style="margin-top:14px;font-size:15px">আমার ওয়েবসাইট: <a href="https://ekramulislamjishan.com" target="_blank" rel="noopener" style="color:var(--indigo);font-weight:600">ekramulislamjishan.com</a></p>
@@ -350,7 +403,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
         <li>৩টা রেডি ব্রিফ টেমপ্লেট (প্রোমো, প্রোডাক্ট লঞ্চ, Reels আইডিয়া)</li>
         <li>কালার প্যালেট লিস্ট</li>
         <li>৬ মাস WhatsApp গ্রুপ সাপোর্ট</li>
-        <li>ক্লাসের রেকর্ডিং, যখন খুশি দেখবেন</li>
+        <li>রেকর্ডেড কোর্স, যতবার খুশি দেখবেন</li>
       </ul></div>
   </div>
   <div class="note"><b>শুরুর আগে জেনে রাখুন:</b> ফ্রিতেও কাজ করতে পারবেন। তবে ফ্রি প্ল্যানে ০–৩টা ভিডিও বানানোর পর টাইম লিমিট আসে, কিছু সময় অপেক্ষা করে আবার বানাতে পারবেন। একটা ল্যাপটপ বা পিসি থাকলে সবচেয়ে ভালো।</div>
@@ -360,7 +413,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
 <section id="enroll" style="border-top:0"><div class="wrap">
   <div class="enroll">
     <h2>কিভাবে এনরোল করবেন</h2>
-    <p class="lead">পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘণ্টার মধ্যে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p>
+    <p class="lead">পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘণ্টার মধ্যে কোর্সের অ্যাক্সেস দিয়ে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p>
 
     <div class="steps3">
       <div class="s3"><em>১</em><span>নিচের bKash বা Nagad নম্বরে <b class="js-amt">৳৬৯৯</b> Send Money করে স্ক্রিনশট নিন</span></div>
@@ -387,11 +440,11 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
 <!-- FAQ -->
 <section><div class="wrap">
   <h2>প্রশ্ন ও উত্তর</h2>
-  <details open><summary>কোডিং না জানলে কি পারবো?</summary><p>হ্যাঁ। কোড AI লিখে দেবে, আপনাকে শুধু কী চান সেটা সাধারণ ভাষায় লিখতে হবে। ক্লাসে আমি লাইভ দেখাব কিভাবে লিখতে হয়, আর রেডি প্রম্পট ও টেমপ্লেট তো পাচ্ছেনই।</p></details>
-  <details open><summary>ক্লাস লাইভ নাকি রেকর্ডেড?</summary><p>লাইভ ক্লাস, যেখানে আমার সাথে সাথে নিজের কম্পিউটারে কাজ করবেন। ক্লাস শেষে রেকর্ডিং পাবেন, যখন খুশি আবার দেখতে পারবেন।</p></details>
+  <details open><summary>কোডিং না জানলে কি পারবো?</summary><p>হ্যাঁ। কোড AI লিখে দেবে, আপনাকে শুধু কী চান সেটা সাধারণ ভাষায় লিখতে হবে। কোর্সে আমি ধাপে ধাপে দেখিয়েছি কিভাবে লিখতে হয়, আর রেডি প্রম্পট ও টেমপ্লেট তো পাচ্ছেনই।</p></details>
+  <details open><summary>কোর্সটা কি লাইভ নাকি রেকর্ডেড?</summary><p>কোর্সটা রেকর্ডেড। কেনার পর নিজের সময়মতো, নিজের কম্পিউটারে সাথে সাথে কাজ করতে করতে যতবার খুশি দেখতে পারবেন। কিছু আটকে গেলে ৬ মাস WhatsApp গ্রুপে জিজ্ঞেস করতে পারবেন।</p></details>
   <details open><summary>ফ্রিতে কি ভিডিও বানানো যাবে?</summary><p>যাবে। তবে ফ্রি প্ল্যানে ০–৩টা ভিডিও বানানোর পর টাইম লিমিট আসে। তখন কিছু সময় অপেক্ষা করে আবার বানাতে পারবেন।</p></details>
   <details><summary>মোবাইল দিয়ে কি করা যাবে?</summary><p>ল্যাপটপ বা পিসি থাকলে সবচেয়ে ভালো ফল পাবেন। শুধু মোবাইল দিয়ে চালাতে চাইলে এনরোলের আগে WhatsApp-এ আমাকে জিজ্ঞেস করে নিন।</p></details>
-  <details><summary>পেমেন্টের পর কতক্ষণে অ্যাক্সেস পাবো?</summary><p>পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘণ্টার মধ্যে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p></details>
+  <details><summary>পেমেন্টের পর কতক্ষণে অ্যাক্সেস পাবো?</summary><p>পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘণ্টার মধ্যে কোর্সের অ্যাক্সেস দিয়ে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p></details>
 </div></section>
 
 </main>
@@ -466,6 +519,9 @@ document.getElementById("f").addEventListener("submit", e => {
   if(!typed) return;
   const chars = window.Intl && Intl.Segmenter ? Array.from(new Intl.Segmenter("bn",{granularity:"grapheme"}).segment(PROMPT),x=>x.segment) : Array.from(PROMPT);
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const vids=Array.from(document.querySelectorAll(".s3 video"));
+  let loaded=false;
+  const loadVids=()=>{ if(loaded) return; loaded=true; vids.forEach(v=>{ v.src=v.dataset.src; v.load(); }); };
   let n=0, cur=0, target=0, timers=[];
   const T=(f,ms)=>timers.push(setTimeout(f,ms));
   const setP=(t,l)=>{target=t; fill.style.width=t+"%"; if(l) lbl.textContent=l;};
@@ -477,14 +533,35 @@ document.getElementById("f").addEventListener("submit", e => {
     T(step,600);
   }
   function go(){
-    T(()=>{ scr.dataset.s="code"; setP(35,"AI কোড লিখছে…"); },300);
+    T(()=>{ scr.dataset.s="code"; setP(35,"AI কোড লিখছে…"); loadVids(); },300);
     T(()=>{ scr.dataset.s="1";    setP(65,"সিন ১ রেন্ডার হচ্ছে…"); },2400);
     T(()=>{ scr.dataset.s="2";    setP(92,"সিন ২ রেন্ডার হচ্ছে…"); },4600);
     T(()=>{ scr.dataset.s="done"; setP(100,"রেন্ডার শেষ ✓"); },6900);
-    T(run,10200);
+    T(()=>{ scr.dataset.s="wall"; lbl.textContent="আরও ভিডিও, সব রেডি ✓"; vids.forEach(v=>{v.currentTime=0; v.play().catch(()=>{});}); },8700);
+    T(()=>{ vids.forEach(v=>v.pause()); run(); },14200);
   }
   if(still){ typed.textContent=PROMPT; scr.dataset.s="done"; fill.style.width="100%"; pct.textContent="১০০%"; lbl.textContent="রেন্ডার শেষ ✓"; }
   else run();
+})();
+
+/* আয়ের ক্যালকুলেটর */
+(function(){
+  const cfg={local:{min:1000,max:4000,step:500,def:2500,note:"লোকাল ক্লায়েন্টে সাধারণত প্রতি ভিডিও ৳১,০০০ থেকে ৳৪,০০০"},
+             intl:{min:8000,max:25000,step:1000,def:15000,note:"ইন্টারন্যাশনাল ক্লায়েন্টে সাধারণত প্রতি ভিডিও ৳৮,০০০ থেকে ৳২৫,০০০"}};
+  const fmt=n=>"৳"+bn(n.toLocaleString("en-US"));
+  const rp=document.getElementById("r-price"), rc=document.getElementById("r-count");
+  if(!rp) return;
+  let type="local";
+  function apply(t){ type=t; const c=cfg[t]; rp.min=c.min; rp.max=c.max; rp.step=c.step; rp.value=c.def;
+    document.querySelectorAll(".seg2 button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===t)); upd(); }
+  function upd(){ const p=+rp.value, n=+rc.value;
+    document.getElementById("c-price").textContent=fmt(p);
+    document.getElementById("c-count").textContent=bn(n)+"টা";
+    document.getElementById("c-total").textContent=fmt(p*n);
+    document.getElementById("c-note").textContent=cfg[type].note; }
+  document.querySelectorAll(".seg2 button").forEach(b=>b.addEventListener("click",()=>apply(b.dataset.t)));
+  rp.addEventListener("input",upd); rc.addEventListener("input",upd);
+  apply("local");
 })();
 </script>
 </body>
