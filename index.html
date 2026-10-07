@@ -276,6 +276,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
       <li>ক্লাসে থিওরি নয়, লাইভ প্রজেক্ট বানিয়ে দেখাই</li>
     </ul>
     <a class="btn" href="#enroll">আমার সাথে শিখুন</a>
+    <p style="margin-top:14px;font-size:15px">আমার ওয়েবসাইট: <a href="https://ekramulislamjishan.com" target="_blank" rel="noopener" style="color:var(--indigo);font-weight:600">ekramulislamjishan.com</a></p>
   </div>
 </div></section>
 
@@ -309,7 +310,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
 
     <div class="steps3">
       <div class="s3"><em>১</em><span>নিচের bKash বা Nagad নম্বরে <b class="js-amt">৳৬৯৯</b> Send Money করে স্ক্রিনশট নিন</span></div>
-      <div class="s3"><em>২</em><span>ফর্মে আপনার নাম, নম্বর আর Transaction ID লিখুন</span></div>
+      <div class="s3"><em>২</em><span>ফর্মে আপনার নাম আর নম্বর লিখুন</span></div>
       <div class="s3"><em>৩</em><span>WhatsApp খুলে মেসেজের সাথে স্ক্রিনশটটা পাঠান</span></div>
     </div>
 
@@ -323,7 +324,6 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
       <div><label for="w">WhatsApp নম্বর</label><input id="w" required inputmode="numeric" placeholder="01XXXXXXXXX" autocomplete="tel"></div>
       <div><label for="p">যে নম্বর থেকে টাকা পাঠিয়েছেন</label><input id="p" required inputmode="numeric" placeholder="01XXXXXXXXX"></div>
       <div><label for="m">পেমেন্ট মাধ্যম</label><select id="m"><option>bKash</option><option>Nagad</option></select></div>
-      <div class="full"><label for="t">Transaction ID (TrxID)</label><input id="t" required placeholder="যেমন: 9A7B6C5D4E" autocapitalize="characters"></div>
       <div class="amount-line">পরিশোধযোগ্য: <b class="js-amt">৳৬৯৯</b></div>
       <button class="btn yellow block full" type="submit">WhatsApp-এ কনফার্ম করুন</button>
     </form>
@@ -342,7 +342,7 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
 
 </main>
 
-<footer><div class="wrap">Motion Without After Effects · © Nexora · সব প্রশ্নের জন্য <a id="wa-foot" href="#" target="_blank" rel="noopener">WhatsApp করুন</a></div></footer>
+<footer><div class="wrap">Motion Without After Effects · © Nexora · <a href="https://ekramulislamjishan.com" target="_blank" rel="noopener">ekramulislamjishan.com</a> · সব প্রশ্নের জন্য <a id="wa-foot" href="#" target="_blank" rel="noopener">WhatsApp করুন</a></div></footer>
 
 <div class="sticky" id="sticky">
   <div class="sp"><b class="js-now">৳৬৯৯</b><s class="js-old">৳১৯৯৯</s><small class="js-sticky-small">অফার শেষ হতে <span id="cd-mini"></span></small></div>
@@ -400,7 +400,7 @@ document.getElementById("f").addEventListener("submit", e => {
   e.preventDefault();
   const v = id => document.getElementById(id).value.trim();
   const price = expired ? REGULAR_PRICE : OFFER_PRICE;
-  const msg = `আসসালামু আলাইকুম, আমি "Motion Without After Effects" কোর্সে এনরোল করতে চাই।\n\nনাম: ${v("n")}\nWhatsApp: ${v("w")}\nপেমেন্ট মাধ্যম: ${v("m")}\nযে নম্বর থেকে পাঠিয়েছি: ${v("p")}\nTrxID: ${v("t")}\nটাকা: ${price} টাকা\n\nস্ক্রিনশট পাঠাচ্ছি।`;
+  const msg = `আসসালামু আলাইকুম, আমি "Motion Without After Effects" কোর্সে এনরোল করতে চাই।\n\nনাম: ${v("n")}\nWhatsApp: ${v("w")}\nপেমেন্ট মাধ্যম: ${v("m")}\nযে নম্বর থেকে পাঠিয়েছি: ${v("p")}\nটাকা: ${price} টাকা\n\nস্ক্রিনশট পাঠাচ্ছি।`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
 });
 </script>
