@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Motion Without After Effects · Nexora</title>
+<meta name="description" content="After Effects বা Premiere Pro ছাড়াই AI দিয়ে প্রফেশনাল মোশন ভিডিও বানানো শিখুন। ১ ঘণ্টা+ রেকর্ডেড কোর্স, লঞ্চ অফারে মাত্র ৬৯৯ টাকা।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#2d2bd6; --indigo-d:#1f1db0; --navy:#14143c; --yellow:#ffc93c; --yellow-d:#f0b400;
+  --bg:#f4f5fb; --card:#fff; --ink:#14143c; --muted:#5d6080; --line:#e3e5f1; --green:#12a36b;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3{font-family:"Anek Bangla","Hind Siliguri",sans-serif;line-height:1.25;letter-spacing:-.01em}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:10px}
+.lead{color:var(--muted);max-width:620px}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--indigo);color:#fff;font:700 17px "Hind Siliguri",sans-serif;padding:14px 26px;border-radius:12px;border:0;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px -8px rgba(45,43,214,.7);transition:transform .15s,background .15s}
+.btn:hover{background:var(--indigo-d);transform:translateY(-1px)}
+.btn.yellow{background:var(--yellow);color:var(--navy);box-shadow:0 8px 20px -10px rgba(240,180,0,.9)}
+.btn.yellow:hover{background:var(--yellow-d)}
+.btn.block{width:100%}
+.cta-row{margin-top:30px;text-align:center}
+.cta-note{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(244,245,251,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font:800 20px "Anek Bangla",sans-serif;text-decoration:none}
+.logo i{display:inline-block;width:8px;height:8px;background:var(--yellow);transform:rotate(45deg);margin-left:3px}
+.nav .btn{padding:8px 16px;font-size:15px;border-radius:10px;box-shadow:none}
+
+/* hero */
+.hero{padding:48px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700;font-size:13px;color:var(--indigo);margin-bottom:16px}
+.pill{background:var(--yellow);color:var(--navy);border-radius:99px;padding:2px 12px;font-size:13px;font-weight:700}
+.hero h1{font-size:clamp(34px,5.4vw,56px);font-weight:800;margin-bottom:16px}
+.hero p.sub{color:var(--muted);font-size:17px;max-width:520px}
+.price{margin:22px 0 4px}
+.price .was{color:var(--muted);font-size:15px}
+.price-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.price .now{font:800 54px/1 "Anek Bangla",sans-serif;color:var(--indigo)}
+.price .old{font:600 26px "Anek Bangla",sans-serif;color:#8a8da8;text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:#e0484a}
+.price .badge{background:var(--yellow);color:var(--navy);font-weight:700;font-size:14px;padding:3px 12px;border-radius:99px}
+.hero .btn{margin-top:18px}
+
+/* countdown */
+.cd{margin-top:20px;background:var(--navy);color:#fff;border-radius:var(--r);padding:16px 18px;max-width:440px}
+.cd-top{font-size:14px;color:#c9caef;margin-bottom:10px}
+.cd-top b{color:var(--yellow)}
+.cd-boxes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.cd-box{background:rgba(255,255,255,.08);border-radius:10px;padding:8px 0}
+.cd-box b{display:block;font:800 28px/1.1 "Anek Bangla",sans-serif;color:var(--yellow);font-variant-numeric:tabular-nums}
+.cd-box span{font-size:12px;color:#c9caef}
+.cd-foot{font-size:13px;color:#c9caef;margin-top:10px}
+.expired .cd{background:#3a3a5c}
+
+/* hero mock: animated motion demo */
+.mock{background:var(--indigo);border-radius:20px;padding:18px;box-shadow:0 30px 60px -30px rgba(45,43,214,.8);color:#fff}
+.mock .prompt{background:rgba(255,255,255,.14);border-radius:10px;padding:10px 14px;font-size:14px;min-height:42px}
+.caret{display:inline-block;width:2px;height:1em;background:var(--yellow);vertical-align:-2px;margin-left:2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.rbar{height:6px;background:rgba(255,255,255,.18);border-radius:9px;margin:14px 0 6px;overflow:hidden}
+.rbar b{display:block;height:100%;width:0;background:var(--yellow);border-radius:9px;transition:width .5s linear}
+.rrow{display:flex;justify-content:space-between;font-size:12px;color:#d6d6ff}
+.screen{margin-top:10px;border-radius:12px;background:#0d0d4f;aspect-ratio:16/10;position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(28px);opacity:.55;animation:drift 7s ease-in-out infinite alternate}
+.blob.b1{width:55%;height:70%;background:#5a52ff;left:-10%;top:-20%}
+.blob.b2{width:45%;height:60%;background:#ffc93c;right:-12%;bottom:-25%;opacity:.28;animation-duration:9s;animation-delay:-3s}
+@keyframes drift{to{transform:translate(30%,18%) scale(1.25)}}
+.sc{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity .45s;pointer-events:none}
+.screen[data-s="code"] .s0,.screen[data-s="1"] .s1,.screen[data-s="2"] .s2,.screen[data-s="done"] .s1{opacity:1}
+/* code scene */
+.s0{align-content:center;justify-items:start;padding:0 8%;gap:7px;font:12px/1 monospace}
+.s0 .ln{height:8px;border-radius:4px;width:0;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.s0 .ln:nth-child(1){background:#9aa0ff}.s0 .ln:nth-child(2){background:#ffc93c;margin-left:6%}.s0 .ln:nth-child(3){background:#6ee7b7;margin-left:6%}.s0 .ln:nth-child(4){background:#f9a8d4;margin-left:12%}.s0 .ln:nth-child(5){background:#9aa0ff}.s0 .ln:nth-child(6){background:#ffc93c;margin-left:6%}
+.screen[data-s="code"] .s0 .ln:nth-child(1){width:46%;transition-delay:.0s}
+.screen[data-s="code"] .s0 .ln:nth-child(2){width:62%;transition-delay:.25s}
+.screen[data-s="code"] .s0 .ln:nth-child(3){width:38%;transition-delay:.5s}
+.screen[data-s="code"] .s0 .ln:nth-child(4){width:54%;transition-delay:.75s}
+.screen[data-s="code"] .s0 .ln:nth-child(5){width:30%;transition-delay:1s}
+.screen[data-s="code"] .s0 .ln:nth-child(6){width:58%;transition-delay:1.25s}
+/* scene 1 */
+.s1 h4{font:800 clamp(22px,3vw,30px) "Anek Bangla",sans-serif;display:flex;gap:.3em;position:relative;z-index:2}
+.s1 h4 span{display:inline-block;opacity:0;transform:translateY(24px) scale(.85);transition:all .6s cubic-bezier(.2,1.4,.4,1)}
+.screen[data-s="1"] .s1 h4 span,.screen[data-s="done"] .s1 h4 span{opacity:1;transform:none}
+.screen[data-s="1"] .s1 h4 span:nth-child(2){transition-delay:.3s}
+.s1 .sq{position:absolute;right:16%;top:18%;width:24px;height:24px;background:var(--yellow);border-radius:7px;transform:scale(0) rotate(-90deg);transition:transform .8s cubic-bezier(.2,1.4,.4,1) .5s}
+.screen[data-s="1"] .s1 .sq,.screen[data-s="done"] .s1 .sq{transform:scale(1) rotate(12deg);animation:bob 2.4s ease-in-out 1.4s infinite}
+@keyframes bob{50%{transform:scale(1) rotate(32deg) translateY(-6px)}}
+.s1 .ring{position:absolute;left:50%;top:50%;width:30%;aspect-ratio:1;border:2px solid rgba(255,255,255,.35);border-radius:50%;transform:translate(-50%,-50%) scale(.2);opacity:0}
+.screen[data-s="1"] .s1 .ring{animation:ring 1.8s ease-out .2s 1}
+@keyframes ring{0%{transform:translate(-50%,-50%) scale(.2);opacity:.9}100%{transform:translate(-50%,-50%) scale(3.2);opacity:0}}
+/* scene 2 */
+.sc.s2{display:flex;align-items:flex-end;justify-content:center;gap:10px;padding:0 0 6%}
+.s2 .bar{display:block;width:12%;height:0;border-radius:6px 6px 0 0;background:linear-gradient(#ffc93c,#ff9d00);transition:height .9s cubic-bezier(.2,1.2,.3,1)}
+.screen[data-s="2"] .bar:nth-child(2){height:30%}
+.screen[data-s="2"] .bar:nth-child(3){height:48%;transition-delay:.15s}
+.screen[data-s="2"] .bar:nth-child(4){height:40%;transition-delay:.3s}
+.screen[data-s="2"] .bar:nth-child(5){height:68%;transition-delay:.45s}
+.screen[data-s="2"] .bar:nth-child(6){height:84%;transition-delay:.6s}
+.s2 .big{position:absolute;left:8%;top:12%;font:800 clamp(24px,3.4vw,34px) "Anek Bangla",sans-serif;opacity:0;transform:translateX(-14px);transition:all .6s .9s}
+.screen[data-s="2"] .s2 .big{opacity:1;transform:none}
+.mock .file{position:absolute;left:12px;bottom:12px;background:var(--green);color:#fff;font-size:11px;padding:2px 10px;border-radius:99px;opacity:0;transform:translateY(10px) scale(.8);transition:all .4s cubic-bezier(.2,1.4,.4,1);z-index:3}
+.screen[data-s="done"] .file{opacity:1;transform:none}
+/* wall of videos */
+.sc.s3{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:6px;padding:8px 8px 26px;place-items:stretch}
+.s3 .tile{border-radius:7px;overflow:hidden;background:#000;transform:scale(.5);opacity:0;transition:transform .5s cubic-bezier(.2,1.4,.4,1),opacity .3s}
+.s3 .tile video{width:100%;height:100%;object-fit:cover;display:block}
+.screen[data-s="wall"] .s3{opacity:1}
+.screen[data-s="wall"] .s3 .tile{transform:none;opacity:1}
+.screen[data-s="wall"] .s3 .tile:nth-child(2){transition-delay:.12s}.screen[data-s="wall"] .s3 .tile:nth-child(3){transition-delay:.24s}.screen[data-s="wall"] .s3 .tile:nth-child(4){transition-delay:.36s}.screen[data-s="wall"] .s3 .tile:nth-child(5){transition-delay:.48s}.screen[data-s="wall"] .s3 .tile:nth-child(6){transition-delay:.6s}
+.s3 .cap{position:absolute;left:0;right:0;bottom:5px;text-align:center;font-size:11px;font-weight:600;color:#fff;opacity:0;transition:opacity .4s 1s}
+.screen[data-s="wall"] .s3 .cap{opacity:1}
+/* reel */
+.reel{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#111;border-radius:12px}
+.reel h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.reel p{color:var(--muted);font-size:15px}
+/* calculator */
+.calc{margin-top:26px;background:var(--navy);color:#fff;border-radius:20px;padding:26px}
+.seg2{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:rgba(255,255,255,.08);padding:5px;border-radius:12px}
+.seg2 button{border:0;border-radius:9px;padding:11px 8px;font:600 15px "Hind Siliguri",sans-serif;background:transparent;color:#c9caef;cursor:pointer}
+.seg2 button[aria-pressed="true"]{background:var(--yellow);color:var(--navy)}
+.crow{margin-top:20px}
+.crow .top{display:flex;justify-content:space-between;font-size:14px;color:#c9caef;margin-bottom:6px}
+.crow .top b{color:#fff;font-size:18px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:9px;background:rgba(255,255,255,.2);padding:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--yellow);border:3px solid var(--navy);box-shadow:0 0 0 2px var(--yellow)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--yellow);border:3px solid var(--navy)}
+.res{margin-top:24px;text-align:center;background:rgba(255,255,255,.07);border-radius:14px;padding:18px}
+.res small{color:#c9caef;display:block}
+.res .amt{font:800 clamp(36px,7vw,52px)/1.1 "Anek Bangla",sans-serif;color:var(--yellow);font-variant-numeric:tabular-nums}
+.disc{font-size:13px;color:#aeb0dc;margin-top:12px;text-align:center}
+@media(max-width:760px){.reel{grid-template-columns:1fr;justify-items:center;text-align:center}.reel video{max-width:260px}}
+/* timeline strip */
+.tl{margin-top:10px;background:rgba(0,0,0,.22);border-radius:10px;padding:8px 10px;position:relative;display:grid;gap:5px;overflow:hidden}
+.tl i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.35)}
+.tl i:nth-child(1){width:55%;background:#ffc93c}.tl i:nth-child(2){width:38%;margin-left:30%;background:#9aa0ff}.tl i:nth-child(3){width:48%;margin-left:12%;background:#6ee7b7}
+.tl::after{content:"";position:absolute;top:0;bottom:0;width:2px;background:#fff;left:0;animation:play 5.5s linear infinite}
+@keyframes play{from{left:2%}to{left:98%}}
+@media(prefers-reduced-motion:reduce){.blob,.caret,.tl::after,.s1 .sq{animation:none!important}}
+
+/* videos */
+.vid{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.vid video{width:100%;aspect-ratio:16/9;background:#111;object-fit:cover}
+.vid p{padding:10px 14px;font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.vid p small{color:var(--muted);font-weight:500;font-size:13px;white-space:nowrap}
+.vid.feat{margin:26px 0 16px}
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.vnote{margin-top:18px;background:#fff;border-left:4px solid var(--yellow);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--muted)}
+
+/* timeline */
+.seg{display:flex;height:6px;border-radius:9px;overflow:hidden;margin:24px 0 6px}
+.seg i{flex:1}.seg i:nth-child(odd){background:var(--indigo)}.seg i:nth-child(even){background:var(--yellow)}
+.ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:10px}
+.step{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step time{font:800 18px "Anek Bangla",sans-serif;color:var(--indigo);font-variant-numeric:tabular-nums}
+.step h3{font-size:18px;font-weight:700}
+.step p{color:var(--muted);font-size:15px}
+
+/* instructor */
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.photos img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 18%;border-radius:14px;background:#dde}
+.photos img:nth-child(2){margin-top:22px}.photos img:nth-child(4){margin-top:22px}
+.photos img:nth-child(1),.photos img:nth-child(3){margin-top:0}
+.ins h2{margin-bottom:6px}
+.ins .role{color:var(--indigo);font-weight:700;margin-bottom:14px}
+.ins p{color:var(--muted);margin-bottom:12px}
+.facts{list-style:none;margin:14px 0 20px}
+.facts li{padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+.facts li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;background:var(--yellow);transform:rotate(45deg)}
+
+/* lists */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h2{font-size:28px}
+.lst{list-style:none;margin-top:14px}
+.lst li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);position:relative;font-size:15px}
+.lst li::before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;background:var(--indigo);transform:rotate(45deg)}
+.two > div:last-child .lst li::before{background:var(--yellow)}
+.note{margin-top:30px;background:#fff;border-left:4px solid var(--yellow);border-radius:10px;padding:14px 16px;font-size:14px;color:var(--muted)}
+.note b{color:var(--ink)}
+
+/* enroll */
+.enroll{background:var(--navy);color:#fff;border-radius:22px;padding:34px 28px}
+.enroll h2{color:#fff}
+.enroll .lead{color:#c9caef}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.s3{background:rgba(255,255,255,.07);border-radius:12px;padding:14px;font-size:14px;display:flex;gap:10px}
+.s3 em{flex:none;width:26px;height:26px;border-radius:50%;background:var(--yellow);color:var(--navy);font:700 14px "Hind Siliguri";display:grid;place-items:center;font-style:normal}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.pc{border-radius:12px;padding:14px 16px;position:relative}
+.pc.bk{background:#e2136e}.pc.ng{background:#f05a22}
+.pc small{display:block;font-size:12px;opacity:.9}
+.pc b{font:700 22px "Hind Siliguri";letter-spacing:.02em}
+.copy{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:#fff;color:var(--navy);border:0;border-radius:8px;padding:5px 12px;font:600 13px "Hind Siliguri";cursor:pointer}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:13px;font-weight:600;display:block;margin-bottom:4px;color:#e4e5ff}
+input,select{width:100%;padding:13px 14px;border-radius:10px;border:0;font:16px "Hind Siliguri",sans-serif;background:#fff;color:var(--ink)}
+.full{grid-column:1/-1}
+.amount-line{grid-column:1/-1;font-size:14px;color:#c9caef}
+.amount-line b{color:var(--yellow)}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:16px 28px 16px 0;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;color:var(--indigo);font-size:22px}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 16px;color:var(--muted);font-size:15px}
+
+footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
+
+/* sticky mobile bar */
+.sticky{display:none}
+@media(max-width:760px){
+  section{padding:46px 0}
+  .hero-grid,.ins-grid,.two{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .steps3,.pay,form{grid-template-columns:1fr}
+  .hero{padding-top:30px}
+  .mock{order:-1}
+  .price .now{font-size:46px}
+  .step{grid-template-columns:56px 1fr}
+  .enroll{padding:26px 18px}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0));align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -8px 24px -12px rgba(20,20,60,.25)}
+  .sticky .sp{line-height:1.2}
+  .sticky .sp b{font:800 22px "Anek Bangla",sans-serif;color:var(--indigo)}
+  .sticky .sp s{color:#8a8da8;font-size:14px;margin-left:6px}
+  .sticky .sp small{display:block;font-size:12px;color:var(--muted)}
+  .sticky .btn{padding:11px 18px;font-size:16px;box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <a class="logo" href="#top">Nexora<i></i></a>
+  <a class="btn" href="#enroll">এনরোল করুন</a>
+</div></header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="tag">Motion Without After Effects <span class="pill">১ ঘণ্টা+ AI মোশন ভিডিও</span></div>
+    <h1>After Effects, Premiere Pro ছাড়াই AI দিয়ে মোশন ভিডিও।</h1>
+    <p class="sub">কোনো এডিটিং সফটওয়্যার লাগবে না। শুধু লিখে বলবেন কেমন ভিডিও চান, AI নিজেই প্রফেশনাল মোশন গ্রাফিক্স বানিয়ে MP4 রেন্ডার করে দেবে। ১ ঘণ্টার বেশি সময়ের রেকর্ডেড কোর্সে পুরো সিস্টেম শিখে নিন, নিজের সময়মতো।</p>
+
+    <div class="price">
+      <div class="was js-price-label">কোর্সের রেগুলার প্রাইস <b>৳১৯৯৯</b>, এখন লঞ্চ অফারে</div>
+      <div class="price-line">
+        <span class="now js-now">৳৬৯৯</span>
+        <span class="old js-old">৳১৯৯৯</span>
+        <span class="badge js-badge">লঞ্চ অফার</span>
+      </div>
+    </div>
+
+    <a class="btn yellow" href="#enroll">এখনই এনরোল করুন</a>
+
+    <div class="cd" id="cd">
+      <div class="cd-top js-cd-top"><b>লঞ্চ অফার</b> শেষ হতে বাকি</div>
+      <div class="cd-boxes">
+        <div class="cd-box"><b id="cd-d">০২</b><span>দিন</span></div>
+        <div class="cd-box"><b id="cd-h">০৫</b><span>ঘণ্টা</span></div>
+        <div class="cd-box"><b id="cd-m">০০</b><span>মিনিট</span></div>
+        <div class="cd-box"><b id="cd-s">০০</b><span>সেকেন্ড</span></div>
+      </div>
+      <div class="cd-foot js-cd-foot">সময় শেষ হলে কোর্সের দাম ফিরে যাবে ৳১৯৯৯-এ।</div>
+    </div>
+  </div>
+
+  <div class="mock" aria-hidden="true">
+    <div class="prompt"><span id="typed"></span><i class="caret"></i></div>
+    <div class="rbar"><b id="rfill"></b></div>
+    <div class="rrow"><span id="rlbl">প্রস্তুত</span><span id="rpct">০%</span></div>
+    <div class="screen" id="screen" data-s="idle">
+      <span class="blob b1"></span><span class="blob b2"></span>
+      <div class="sc s0"><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div></div>
+      <div class="sc s1"><h4><span>Launch</span><span>faster.</span></h4><span class="sq"></span><span class="ring"></span></div>
+      <div class="sc s2"><span class="big">+২৪০%</span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+      <div class="sc s3"><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/nexora-intro.jpg" data-src="videos/mini/nexora-intro.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-realestate.jpg" data-src="videos/mini/bigibyte-realestate.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-aichat.jpg" data-src="videos/mini/bigibyte-aichat.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/visyon-promo.jpg" data-src="videos/mini/visyon-promo.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-launch.jpg" data-src="videos/mini/bigibyte-launch.mp4"></video></div><div class="tile"><video muted loop playsinline preload="none" poster="videos/mini/bigibyte-premium.jpg" data-src="videos/mini/bigibyte-premium.mp4"></video></div><span class="cap">এই সবগুলো ভিডিও এই সিস্টেমেই বানানো</span></div>
+      <span class="file">promo_v1.mp4 ✓</span>
+    </div>
+    <div class="tl"><i></i><i></i><i></i></div>
+  </div>
+</div></section>
+
+<!-- VIDEOS -->
+<section id="demo"><div class="wrap">
+  <h2>কোর্স শেষে আপনিও এমন ভিডিও বানাতে পারবেন</h2>
+  <p class="lead">নিচের প্রতিটা ভিডিও After Effects বা Premiere Pro-তে বানানো হয়নি। পুরোটা AI দিয়ে কোড লিখিয়ে রেন্ডার করা। ১ ঘণ্টার কোর্সে এই একই সিস্টেম আপনি নিজের হাতে চালাতে শিখবেন।</p>
+
+  <figure class="vid feat">
+    <video controls playsinline preload="none" poster="videos/nexora-launch.jpg"><source src="videos/nexora-launch.mp4" type="video/mp4"></video>
+    <p>Nexora লঞ্চ ভিডিও <small>১:১৩</small></p>
+  </figure>
+
+  <div class="vgrid">
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/nexora-intro.jpg"><source src="videos/nexora-intro.mp4" type="video/mp4"></video><p>Nexora ইন্ট্রো ভিডিও <small>০:৩৪</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/visyon-course.jpg"><source src="videos/visyon-course.mp4" type="video/mp4"></video><p>কোর্স প্রোমো ভিডিও <small>১:২৪</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/visyon-promo.jpg"><source src="videos/visyon-promo.mp4" type="video/mp4"></video><p>ব্র্যান্ড প্রোমো ভিডিও <small>০:৪৪</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/bigibyte-tracker.jpg"><source src="videos/bigibyte-tracker.mp4" type="video/mp4"></video><p>প্রোডাক্ট ওয়াকথ্রু <small>১:১৭</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/bigibyte-launch.jpg"><source src="videos/bigibyte-launch.mp4" type="video/mp4"></video><p>SaaS লঞ্চ প্রোমো <small>০:৩৩</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/bigibyte-aichat.jpg"><source src="videos/bigibyte-aichat.mp4" type="video/mp4"></video><p>AI চ্যাটবট প্রোমো <small>০:১৮</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/bigibyte-realestate.jpg"><source src="videos/bigibyte-realestate.mp4" type="video/mp4"></video><p>রিয়েল এস্টেট প্রোমো <small>০:১৮</small></p></figure>
+    <figure class="vid"><video controls playsinline preload="none" poster="videos/bigibyte-premium.jpg"><source src="videos/bigibyte-premium.mp4" type="video/mp4"></video><p>প্রিমিয়াম ব্র্যান্ড প্রোমো <small>০:১৪</small></p></figure>
+  </div>
+
+  <div class="cta-row"><a class="btn yellow" href="#enroll">আমিও এমন ভিডিও বানাতে চাই</a>
+    <div class="cta-note js-cta-note">লঞ্চ অফারে মাত্র ৳৬৯৯</div></div>
+</div></section>
+
+<!-- LEARN -->
+<section><div class="wrap">
+  <h2>১ ঘণ্টা+ কোর্সে যা শিখবেন</h2>
+  <p class="lead">একটা প্রজেক্ট ধরে শুরু থেকে শেষ পর্যন্ত। কোর্স শেষে আপনার নিজের প্রথম রেডি ভিডিও থাকবে।</p>
+  <div class="seg"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="ticks"><span>০:০০</span><span>৩০:০০</span><span>৬০:০০+</span></div>
+  <div class="step"><time>০০:০০</time><div><h3>এটা কিভাবে কাজ করে</h3><p>ডেমো দেখে বুঝবেন AI কিভাবে কোড লিখে ভিডিও বানায়।</p></div></div>
+  <div class="step"><time>০৫:০০</time><div><h3>সেটআপ</h3><p>AI প্রজেক্ট সেটআপ, রেডি সিস্টেম প্রম্পট বসানো, ফোল্ডার সাজানো।</p></div></div>
+  <div class="step"><time>১০:০০</time><div><h3>প্রথম ভিডিও, হাতে-কলমে</h3><p>ব্রিফ লেখা, সিন প্ল্যান অনুমোদন, তারপর MP4 রেন্ডার।</p></div></div>
+  <div class="step"><time>৩০:০০</time><div><h3>এডিট আর ভার্সন</h3><p>শুধু একটা অংশ বদলানো, v2, v3 রেন্ডার, আর ভুল হলে কী করবেন।</p></div></div>
+  <div class="step"><time>৪০:০০</time><div><h3>ব্র্যান্ড আর মিউজিক</h3><p>লোগো, কালার, মিউজিকের বিটে কাট, Reels আর YouTube সাইজ।</p></div></div>
+  <div class="step"><time>৫০:০০</time><div><h3>এই স্কিল দিয়ে আয়</h3><p>ক্লায়েন্টের কাছে কত টাকায় বিক্রি করবেন আর ক্লায়েন্ট কোথায় পাবেন।</p></div></div>
+</div></section>
+
+<!-- CALC -->
+<section id="income"><div class="wrap">
+  <h2>এই স্কিল দিয়ে কত আয় হতে পারে</h2>
+  <p class="lead">নিজের ক্লায়েন্টের ধরন আর মাসে কয়টা ভিডিও করবেন, সেটা বেছে নিন। আপনার দাম অনুযায়ী মাসের হিসাব দেখুন।</p>
+  <div class="calc">
+    <div class="seg2" role="group" aria-label="ক্লায়েন্টের ধরন">
+      <button type="button" data-t="local" aria-pressed="true">লোকাল ক্লায়েন্ট</button>
+      <button type="button" data-t="intl" aria-pressed="false">ইন্টারন্যাশনাল ক্লায়েন্ট</button>
+    </div>
+    <div class="crow"><div class="top"><span>প্রতি ভিডিওর দাম</span><b id="c-price">৳২,৫০০</b></div><input id="r-price" type="range" aria-label="প্রতি ভিডিওর দাম"></div>
+    <div class="crow"><div class="top"><span>মাসে ভিডিওর সংখ্যা</span><b id="c-count">৫টা</b></div><input id="r-count" type="range" min="1" max="20" value="5" aria-label="মাসে ভিডিওর সংখ্যা"></div>
+    <div class="res"><small>মাসে আনুমানিক আয়</small><div class="amt" id="c-total">৳১২,৫০০</div><small id="c-note"></small></div>
+    <p class="disc">এটা শুধু একটা উদাহরণ হিসাব, আয়ের নিশ্চয়তা নয়। ক্লায়েন্ট পাওয়া আর দাম ঠিক করা আপনার কাজ আর দক্ষতার ওপর নির্ভর করবে।</p>
+  </div>
+  <div class="cta-row"><a class="btn yellow" href="#enroll">স্কিলটা শিখে নিন</a></div>
+</div></section>
+
+<!-- INSTRUCTOR -->
+<section><div class="wrap ins-grid">
+  <div class="photos">
+    <img loading="lazy" src="img/jishan-1.jpg" alt="ইকরামুল ইসলাম জিসান">
+    <img loading="lazy" src="img/jishan-2.jpg" alt="ইকরামুল ইসলাম জিসান, স্টুলে বসে">
+    <img loading="lazy" src="img/jishan-3.jpg" alt="ইকরামুল ইসলাম জিসান, হাসিমুখে">
+    <img loading="lazy" src="img/jishan-4.jpg" alt="ইকরামুল ইসলাম জিসান, চারকোল স্যুটে">
+  </div>
+  <div class="ins">
+    <h2>আপনার ইন্সট্রাক্টর</h2>
+    <div class="role">ইকরামুল ইসলাম জিসান, ফাউন্ডার, Nexora</div>
+    <p>আমি এই কোর্সে যা শেখাব, ঠিক সেটাই প্রতিদিন ক্লায়েন্টের কাজে ব্যবহার করি। উপরের ভিডিওগুলোও এই সিস্টেমেই বানানো।</p>
+    <ul class="facts">
+      <li>Nexora-র ফাউন্ডার: AI ভিডিও, ভিডিও এডিটিং, গ্রাফিক ডিজাইন আর ডিজিটাল মার্কেটিং</li>
+      <li>বাংলাদেশ ও সৌদি আরবের ক্লায়েন্টের জন্য নিয়মিত কাজ করি</li>
+      <li>Google Ads, Meta Ads আর Google Business Profile ম্যানেজ করার অভিজ্ঞতা</li>
+      <li>কোর্সে থিওরি নয়, পুরো প্রজেক্ট বানিয়ে দেখাই</li>
+    </ul>
+    <a class="btn" href="#enroll">আমার সাথে শিখুন</a>
+    <p style="margin-top:14px;font-size:15px">আমার ওয়েবসাইট: <a href="https://ekramulislamjishan.com" target="_blank" rel="noopener" style="color:var(--indigo);font-weight:600">ekramulislamjishan.com</a></p>
+  </div>
+</div></section>
+
+<!-- WHO / INCLUDED -->
+<section><div class="wrap">
+  <div class="two">
+    <div><h2>কাদের জন্য</h2>
+      <ul class="lst">
+        <li>ফ্রিল্যান্সার যারা নতুন সার্ভিস যোগ করতে চান</li>
+        <li>ভিডিও এডিটর যারা After Effects শিখতে সময় পাচ্ছেন না</li>
+        <li>বিজনেস ওনার যারা নিজের প্রোডাক্টের প্রোমো নিজেই বানাতে চান</li>
+        <li>ডিজিটাল মার্কেটার যারা অ্যাডের জন্য দ্রুত ভিডিও চান</li>
+      </ul></div>
+    <div><h2>সাথে যা পাবেন</h2>
+      <ul class="lst">
+        <li>রেডি সিস্টেম প্রম্পট, কপি করে বসালেই কাজ শুরু</li>
+        <li>৩টা রেডি ব্রিফ টেমপ্লেট (প্রোমো, প্রোডাক্ট লঞ্চ, Reels আইডিয়া)</li>
+        <li>কালার প্যালেট লিস্ট</li>
+        <li>৬ মাস WhatsApp গ্রুপ সাপোর্ট</li>
+        <li>রেকর্ডেড কোর্স, যতবার খুশি দেখবেন</li>
+      </ul></div>
+  </div>
+  <div class="note"><b>শুরুর আগে জেনে রাখুন:</b> ফ্রিতেও কাজ করতে পারবেন। তবে ফ্রি প্ল্যানে ০–৩টা ভিডিও বানানোর পর টাইম লিমিট আসে, কিছু সময় অপেক্ষা করে আবার বানাতে পারবেন। একটা ল্যাপটপ বা পিসি থাকলে সবচেয়ে ভালো।</div>
+</div></section>
+
+<!-- ENROLL -->
+<section id="enroll" style="border-top:0"><div class="wrap">
+  <div class="enroll">
+    <h2>কিভাবে এনরোল করবেন</h2>
+    <p class="lead">পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘণ্টার মধ্যে কোর্সের অ্যাক্সেস দিয়ে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p>
+
+    <div class="steps3">
+      <div class="s3"><em>১</em><span>নিচের bKash বা Nagad নম্বরে <b class="js-amt">৳৬৯৯</b> Send Money করে স্ক্রিনশট নিন</span></div>
+      <div class="s3"><em>২</em><span>ফর্মে আপনার নাম আর নম্বর লিখুন</span></div>
+      <div class="s3"><em>৩</em><span>WhatsApp খুলে মেসেজের সাথে স্ক্রিনশটটা পাঠান</span></div>
+    </div>
+
+    <div class="pay">
+      <div class="pc bk"><small>bKash · Send Money</small><b>01742-312608</b><button type="button" class="copy" data-copy="01742312608">কপি</button></div>
+      <div class="pc ng"><small>Nagad · Send Money</small><b>01742-312608</b><button type="button" class="copy" data-copy="01742312608">কপি</button></div>
+    </div>
+
+    <form id="f">
+      <div><label for="n">আপনার নাম</label><input id="n" required autocomplete="name"></div>
+      <div><label for="w">WhatsApp নম্বর</label><input id="w" required inputmode="numeric" placeholder="01XXXXXXXXX" autocomplete="tel"></div>
+      <div><label for="p">যে নম্বর থেকে টাকা পাঠিয়েছেন</label><input id="p" required inputmode="numeric" placeholder="01XXXXXXXXX"></div>
+      <div><label for="m">পেমেন্ট মাধ্যম</label><select id="m"><option>bKash</option><option>Nagad</option></select></div>
+      <div class="amount-line">পরিশোধযোগ্য: <b class="js-amt">৳৬৯৯</b></div>
+      <button class="btn yellow block full" type="submit">WhatsApp-এ কনফার্ম করুন</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section><div class="wrap">
+  <h2>প্রশ্ন ও উত্তর</h2>
+  <details open><summary>কোডিং না জানলে কি পারবো?</summary><p>হ্যাঁ। কোড AI লিখে দেবে, আপনাকে শুধু কী চান সেটা সাধারণ ভাষায় লিখতে হবে। কোর্সে আমি ধাপে ধাপে দেখিয়েছি কিভাবে লিখতে হয়, আর রেডি প্রম্পট ও টেমপ্লেট তো পাচ্ছেনই।</p></details>
+  <details open><summary>কোর্সটা কি লাইভ নাকি রেকর্ডেড?</summary><p>কোর্সটা রেকর্ডেড। কেনার পর নিজের সময়মতো, নিজের কম্পিউটারে সাথে সাথে কাজ করতে করতে যতবার খুশি দেখতে পারবেন। কিছু আটকে গেলে ৬ মাস WhatsApp গ্রুপে জিজ্ঞেস করতে পারবেন।</p></details>
+  <details open><summary>ফ্রিতে কি ভিডিও বানানো যাবে?</summary><p>যাবে। তবে ফ্রি প্ল্যানে ০–৩টা ভিডিও বানানোর পর টাইম লিমিট আসে। তখন কিছু সময় অপেক্ষা করে আবার বানাতে পারবেন।</p></details>
+  <details><summary>মোবাইল দিয়ে কি করা যাবে?</summary><p>ল্যাপটপ বা পিসি থাকলে সবচেয়ে ভালো ফল পাবেন। শুধু মোবাইল দিয়ে চালাতে চাইলে এনরোলের আগে WhatsApp-এ আমাকে জিজ্ঞেস করে নিন।</p></details>
+  <details><summary>পেমেন্টের পর কতক্ষণে অ্যাক্সেস পাবো?</summary><p>পেমেন্ট মিলিয়ে দেখে সাধারণত কয়েক ঘণ্টার মধ্যে কোর্সের অ্যাক্সেস দিয়ে আপনাকে WhatsApp গ্রুপে যোগ করা হবে।</p></details>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">Motion Without After Effects · © Nexora · <a href="https://ekramulislamjishan.com" target="_blank" rel="noopener">ekramulislamjishan.com</a> · সব প্রশ্নের জন্য <a id="wa-foot" href="#" target="_blank" rel="noopener">WhatsApp করুন</a></div></footer>
+
+<div class="sticky" id="sticky">
+  <div class="sp"><b class="js-now">৳৬৯৯</b><s class="js-old">৳১৯৯৯</s><small class="js-sticky-small">অফার শেষ হতে <span id="cd-mini"></span></small></div>
+  <a class="btn yellow" href="#enroll">এনরোল করুন</a>
+</div>
+
+<script>
+/* ====== সেটিংস: শুধু এই কয়টা বদলান ====== */
+const OFFER_HOURS = 53;                        // প্রত্যেক ভিজিটর প্রথমবার ঢুকলে ২ দিন ৫ ঘণ্টা পাবে, তারপর রেগুলার প্রাইস
+const OFFER_PRICE = 699;
+const REGULAR_PRICE = 1999;
+const WA_NUMBER  = "8801742312608";            // WhatsApp নম্বর (দেশের কোডসহ, + ছাড়া)
+/* ======================================= */
+
+/* প্রতি ভিজিটরের নিজস্ব টাইমার: প্রথম ভিজিটের সময় সেভ হয়, রিলোড দিলে রিসেট হয় না */
+function offerStart(){
+  const K="nx_offer_start";
+  if(/[?&]reset\b/.test(location.search)){ try{localStorage.removeItem(K)}catch(e){} document.cookie=K+"=;path=/;max-age=0"; }
+  let v=null;
+  try{ v=localStorage.getItem(K); }catch(e){}
+  if(!v){ const m=document.cookie.match(new RegExp("(?:^|; )"+K+"=(\\d+)")); if(m) v=m[1]; }
+  v=parseInt(v,10);
+  if(!v || v>Date.now() || isNaN(v)){
+    v=Date.now();
+    try{ localStorage.setItem(K,String(v)); }catch(e){}
+    document.cookie=K+"="+v+";path=/;max-age=31536000;SameSite=Lax";
+  } else {
+    try{ localStorage.setItem(K,String(v)); }catch(e){}
+  }
+  return v;
+}
+const OFFER_END = new Date(offerStart() + OFFER_HOURS*3600*1000);
+
+const bn = s => String(s).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+const pad = n => bn(String(n).padStart(2, "0"));
+const $ = s => document.querySelectorAll(s);
+const set = (sel, txt) => $(sel).forEach(e => e.textContent = txt);
+const money = n => "৳" + bn(n);
+let expired = false;
+
+function render(){
+  const left = OFFER_END - Date.now();
+  if (left <= 0 && !expired){
+    expired = true;
+    document.body.classList.add("expired");
+    set(".js-now", money(REGULAR_PRICE));
+    set(".js-amt", money(REGULAR_PRICE));
+    $(".js-old,.js-badge").forEach(e => e.style.display = "none");
+    set(".js-price-label", "কোর্সের রেগুলার প্রাইস");
+    set(".js-cd-top", "লঞ্চ অফার শেষ হয়ে গেছে");
+    set(".js-cd-foot", "এখন কোর্সটা রেগুলার প্রাইসে পাওয়া যাচ্ছে।");
+    set(".js-cta-note", "রেগুলার প্রাইস " + money(REGULAR_PRICE));
+    set(".js-sticky-small", "রেগুলার প্রাইস");
+  }
+  const t = Math.max(0, left), s = Math.floor(t/1000);
+  const d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60), sec = s%60;
+  set("#cd-d", pad(d)); set("#cd-h", pad(h)); set("#cd-m", pad(m)); set("#cd-s", pad(sec));
+  const mini = $("#cd-mini")[0]; if (mini) mini.textContent = expired ? "" : `${bn(d)}দি ${pad(h)}:${pad(m)}:${pad(sec)}`;
+}
+render(); setInterval(render, 1000);
+
+/* একটা ভিডিও চালালে বাকিগুলো থামবে */
+document.addEventListener("play", e => { if (e.target.tagName === "VIDEO") $("video").forEach(v => v !== e.target && v.pause()); }, true);
+
+/* কপি বাটন */
+$(".copy").forEach(b => b.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "কপি হয়েছে"; } catch { b.textContent = b.dataset.copy; }
+  setTimeout(() => b.textContent = "কপি", 1800);
+}));
+
+/* ফর্ম থেকে WhatsApp */
+document.getElementById("wa-foot").href = `https://wa.me/${WA_NUMBER}`;
+document.getElementById("f").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const price = expired ? REGULAR_PRICE : OFFER_PRICE;
+  const msg = `আসসালামু আলাইকুম, আমি "Motion Without After Effects" কোর্সে এনরোল করতে চাই।\n\nনাম: ${v("n")}\nWhatsApp: ${v("w")}\nপেমেন্ট মাধ্যম: ${v("m")}\nযে নম্বর থেকে পাঠিয়েছি: ${v("p")}\nটাকা: ${price} টাকা\n\nস্ক্রিনশট পাঠাচ্ছি।`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+/* হিরো মোশন ডেমো: প্রম্পট লেখা → কোড → রেন্ডার → MP4 */
+(function(){
+  const PROMPT="১৫ সেকেন্ডের SaaS প্রোমো বানাও, ১৬:৯, নীল ব্র্যান্ড কালার";
+  const typed=document.getElementById("typed"), fill=document.getElementById("rfill"),
+        lbl=document.getElementById("rlbl"), pct=document.getElementById("rpct"), scr=document.getElementById("screen");
+  if(!typed) return;
+  const chars = window.Intl && Intl.Segmenter ? Array.from(new Intl.Segmenter("bn",{granularity:"grapheme"}).segment(PROMPT),x=>x.segment) : Array.from(PROMPT);
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const vids=Array.from(document.querySelectorAll(".s3 video"));
+  let loaded=false;
+  const loadVids=()=>{ if(loaded) return; loaded=true; vids.forEach(v=>{ v.src=v.dataset.src; v.load(); }); };
+  let n=0, cur=0, target=0, timers=[];
+  const T=(f,ms)=>timers.push(setTimeout(f,ms));
+  const setP=(t,l)=>{target=t; fill.style.width=t+"%"; if(l) lbl.textContent=l;};
+  setInterval(()=>{ if(cur!==target){ cur += Math.sign(target-cur)*Math.max(1,Math.abs(target-cur)/8); if(Math.abs(target-cur)<1) cur=target; pct.textContent=bn(Math.round(cur))+"%"; } },60);
+  function run(){
+    timers.forEach(clearTimeout); timers=[]; n=0; typed.textContent=""; cur=0; target=0; fill.style.transition="none"; fill.style.width="0"; pct.textContent="০%"; lbl.textContent="প্রম্পট লিখছেন…"; scr.dataset.s="idle";
+    requestAnimationFrame(()=>{fill.style.transition="";});
+    const step=()=>{ if(n<chars.length){ typed.textContent+=chars[n++]; T(step,45);} else go(); };
+    T(step,600);
+  }
+  function go(){
+    T(()=>{ scr.dataset.s="code"; setP(35,"AI কোড লিখছে…"); loadVids(); },300);
+    T(()=>{ scr.dataset.s="1";    setP(65,"সিন ১ রেন্ডার হচ্ছে…"); },2400);
+    T(()=>{ scr.dataset.s="2";    setP(92,"সিন ২ রেন্ডার হচ্ছে…"); },4600);
+    T(()=>{ scr.dataset.s="done"; setP(100,"রেন্ডার শেষ ✓"); },6900);
+    T(()=>{ scr.dataset.s="wall"; lbl.textContent="আরও ভিডিও, সব রেডি ✓"; vids.forEach(v=>{v.currentTime=0; v.play().catch(()=>{});}); },8700);
+    T(()=>{ vids.forEach(v=>v.pause()); run(); },14200);
+  }
+  if(still){ typed.textContent=PROMPT; scr.dataset.s="done"; fill.style.width="100%"; pct.textContent="১০০%"; lbl.textContent="রেন্ডার শেষ ✓"; }
+  else run();
+})();
+
+/* আয়ের ক্যালকুলেটর */
+(function(){
+  const cfg={local:{min:1000,max:4000,step:500,def:2500,note:"লোকাল ক্লায়েন্টে সাধারণত প্রতি ভিডিও ৳১,০০০ থেকে ৳৪,০০০"},
+             intl:{min:8000,max:25000,step:1000,def:15000,note:"ইন্টারন্যাশনাল ক্লায়েন্টে সাধারণত প্রতি ভিডিও ৳৮,০০০ থেকে ৳২৫,০০০"}};
+  const fmt=n=>"৳"+bn(n.toLocaleString("en-US"));
+  const rp=document.getElementById("r-price"), rc=document.getElementById("r-count");
+  if(!rp) return;
+  let type="local";
+  function apply(t){ type=t; const c=cfg[t]; rp.min=c.min; rp.max=c.max; rp.step=c.step; rp.value=c.def;
+    document.querySelectorAll(".seg2 button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.t===t)); upd(); }
+  function upd(){ const p=+rp.value, n=+rc.value;
+    document.getElementById("c-price").textContent=fmt(p);
+    document.getElementById("c-count").textContent=bn(n)+"টা";
+    document.getElementById("c-total").textContent=fmt(p*n);
+    document.getElementById("c-note").textContent=cfg[type].note; }
+  document.querySelectorAll(".seg2 button").forEach(b=>b.addEventListener("click",()=>apply(b.dataset.t)));
+  rp.addEventListener("input",upd); rc.addEventListener("input",upd);
+  apply("local");
+})();
+</script>
+</body>
+</html>
