@@ -247,6 +247,23 @@ footer{padding:30px 0 90px;text-align:center;font-size:13px;color:var(--muted)}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1576091393645294');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1576091393645294&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -515,6 +532,11 @@ $(".copy").forEach(b => b.addEventListener("click", async () => {
   setTimeout(() => b.textContent = "কপি", 1800);
 }));
 
+/* Pixel: এনরোল বাটনে ক্লিক */
+document.querySelectorAll('a[href="#enroll"]').forEach(a => a.addEventListener("click", () => {
+  try { fbq("track", "InitiateCheckout", { value: expired ? REGULAR_PRICE : OFFER_PRICE, currency: "BDT" }); } catch (_) {}
+}));
+
 /* ফর্ম থেকে WhatsApp */
 document.getElementById("wa-foot").href = `https://wa.me/${WA_NUMBER}`;
 document.getElementById("f").addEventListener("submit", e => {
@@ -522,6 +544,7 @@ document.getElementById("f").addEventListener("submit", e => {
   const v = id => document.getElementById(id).value.trim();
   const price = expired ? REGULAR_PRICE : OFFER_PRICE;
   const msg = `আসসালামু আলাইকুম, আমি "Motion Without After Effects" কোর্সে এনরোল করতে চাই।\n\nনাম: ${v("n")}\nWhatsApp: ${v("w")}\nপেমেন্ট মাধ্যম: ${v("m")}\nযে নম্বর থেকে পাঠিয়েছি: ${v("p")}\nটাকা: ${price} টাকা\n\nস্ক্রিনশট পাঠাচ্ছি।`;
+  try { fbq("track", "Lead", { value: price, currency: "BDT", content_name: "Motion Without After Effects" }); } catch (_) {}
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
 });
 
